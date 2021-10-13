@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright (c) 2021 Pierre Constantineau
+#
+# SPDX-License-Identifier: MIT
 """
     Module representing a keyboard procesing loop..
 """
@@ -48,7 +51,6 @@ class KB_Speaker:
         """
         Module representing a keyboard procesing loop..
         """
-        OFF = 0  # pylint: disable=invalid-name
         ON = 2**15  # pylint: disable=invalid-name
         self.buzzer.frequency = frequency
         self.buzzer.duty_cycle = ON
@@ -58,7 +60,6 @@ class KB_Speaker:
         Module representing a keyboard procesing loop..
         """
         OFF = 0  # pylint: disable=invalid-name
-        ON = 2**15  # pylint: disable=invalid-name
         self.buzzer.duty_cycle = OFF
     
 

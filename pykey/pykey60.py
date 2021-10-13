@@ -30,8 +30,8 @@ import keypad
 import neopixel
 
 
-from pykey.hardware import KB_Hardware
-from pykey.speaker import KB_Speaker
+from . import KB_Hardware
+from speaker import KB_Speaker
 
 class PyKey60(KB_Hardware):
     """

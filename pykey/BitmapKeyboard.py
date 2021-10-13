@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright (c) 2021 Pierre Constantineau
+#
+# SPDX-License-Identifier: MIT
 """
     Module representing a NKRO Keyboard
 """
@@ -43,6 +46,9 @@ class BitmapKeyboard(Keyboard):
             self.report_bitmap[keycode >> 3] &= ~(1 << (keycode & 0x7))
 
     def release_all(self):
+        """
+        Module representing a NKRO Keyboard
+        """
         for i in range(len(self.report)):
             self.report[i] = 0
         self._keyboard_device.send_report(self.report)

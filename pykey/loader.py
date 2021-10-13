@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright (c) 2021 Pierre Constantineau
+#
+# SPDX-License-Identifier: MIT
 """
     Module representing a keyboard procesing loop..
 """

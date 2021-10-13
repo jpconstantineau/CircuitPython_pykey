@@ -9,9 +9,9 @@ https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf
 from adafruit_hid.keycode import Keycode
 
 class KB_Keycode(Keycode):  # pylint: disable=too-few-public-methods
-"""
-Extends Keycode from adafruit_hid
-"""
+    """
+    Extends Keycode from adafruit_hid
+    """
 
     NO        = 0x00    # pylint: disable=invalid-name
     XXXXXXX   = 0x00    # pylint: disable=invalid-name

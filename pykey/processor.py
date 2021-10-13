@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright (c) 2021 Pierre Constantineau
+#
+# SPDX-License-Identifier: MIT
 """
     Class representing a keyboard procesing loop..
 """
@@ -47,7 +50,7 @@ class KB_Processor:
         return tmp
 
 
-    def go(self):
+    def go(self):   # pylint: disable=invalid-name
         """
         Class representing a keyboard procesing loop..
         """
@@ -104,7 +107,6 @@ class KB_Processor:
             self._hardware.speaker.play_startup_tune()
         active_keys = []
         not_sleeping = True
-        layer_index = 0
         i = 0
         while not_sleeping:
             key_event = self._keys.events.get()

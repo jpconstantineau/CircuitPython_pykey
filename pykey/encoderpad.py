@@ -29,9 +29,9 @@ import board
 import keypad
 import rotaryio
 
-from pykey import KB_Hardware
-from pykey.ledmatrix import KB_LEDMatrix
-from pykey.speaker import KB_Speaker
+from . import KB_Hardware
+from ledmatrix import KB_LEDMatrix
+from speaker import KB_Speaker
 
 class EncoderPad(KB_Hardware):
     """
