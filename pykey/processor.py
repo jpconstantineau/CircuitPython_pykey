@@ -83,7 +83,6 @@ class KB_Processor:
                 group = self._keymaps[layer_index].getkeycodes(key_number)
                 #color = self._keymaps[layer_index].macros[key_number][0]
                 if key_event.pressed:
-                   # update_pixels(color)
                     for item in group:
                         if isinstance(item, int):
                             self._hardware.keyboard.press(item)
@@ -91,10 +90,8 @@ class KB_Processor:
                             self._hardware.keyboard_layout.write(item)
                 else:
                     for item in group:
-                        if isinstance(item, int):
-                            if item >= 0:
-                                self._hardware.keyboard.release(item)
-                  #  update_pixels(0x000000)
+                        if isinstance(item, int) and item >= 0:
+                            self._hardware.keyboard.release(item)
             else:
                 i = i+1
                 self.rainbow_cycle(i)
