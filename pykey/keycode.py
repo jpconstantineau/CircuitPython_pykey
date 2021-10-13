@@ -10,8 +10,8 @@ https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf
 """
 
 class KB_Keycode(Keycode):
-    NO        = 0x00
-    XXXXXXX   = 0x00
+    NO        = 0x00    
+    XXXXXXX   = 0x00    # pylint: disable=invalid-name
     ROLL_OVER = 0x01
     TRANSPARENT = 0x01
     TRNS      = 0x01
@@ -209,16 +209,16 @@ class KB_Keycode(Keycode):
     HAEN = LANG1
     HANJ = LANG2
     # Keypad
-    P1   = KP_1
-    P2   = KP_2
-    P3   = KP_3
-    P4   = KP_4
-    P5   = KP_5
-    P6   = KP_6
-    P7   = KP_7
-    P8   = KP_8
-    P9   = KP_9
-    P0   = KP_0
+    P1   = KP_1  # pylint: disable=invalid-name
+    P2   = KP_2  # pylint: disable=invalid-name
+    P3   = KP_3  # pylint: disable=invalid-name
+    P4   = KP_4  # pylint: disable=invalid-name
+    P5   = KP_5  # pylint: disable=invalid-name
+    P6   = KP_6  # pylint: disable=invalid-name
+    P7   = KP_7  # pylint: disable=invalid-name
+    P8   = KP_8  # pylint: disable=invalid-name
+    P9   = KP_9  # pylint: disable=invalid-name
+    P0   = KP_0  # pylint: disable=invalid-name
     PDOT = KP_DOT
     PCMM = KP_COMMA
     PSLS = KP_SLASH

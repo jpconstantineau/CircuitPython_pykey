@@ -25,9 +25,7 @@ Implementation Notes
 
 """
 
-import time
 import board
-import os
 import keypad
 import rotaryio
 
