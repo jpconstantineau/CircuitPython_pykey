@@ -6,7 +6,7 @@
 `pykey`
 ================================================================================
 
-keyboard hardware driver
+keyboard hardware driver - A helper library for hardware keyboards
 
 
 * Author(s): Pierre Constantineau
@@ -40,4 +40,126 @@ Implementation Notes
 # imports
 
 __version__ = "0.0.0-auto.0"
-__repo__ = "https://github.com/jpconstantineau/CircuitPython_Org_pykey.git"
+__repo__ = "https://github.com/jpconstantineau/CircuitPython_pykey.git"
+
+import os
+import usb_hid
+from adafruit_hid.keyboard import Keyboard
+from pykey.BitmapKeyboard import BitmapKeyboard
+
+class KB_Hardware:
+    """
+    Class representing a keyboard Hardware without the specifics...
+    """
+
+    def __init__(self, nkro: bool = False):
+
+
+        self._board_type = os.uname().machine
+        self._keyboard = None
+        self._pixels = None
+        self._leds = None
+        self._speaker =  None
+        self._nkro = nkro
+        self._key_to_position = None
+        self._position_to_key = None
+
+    @property
+    def key_to_position(self):
+        return self._key_to_position
+
+    @property
+    def position_to_key(self):
+        return self._position_to_key
+
+    @property
+    def keys(self):
+        """
+        The keys on the MacroPad. Uses events to track key number and state, e.g. pressed or
+        released. You must fetch the events using ``keys.events.get()`` and then the events are
+        available for usage in your code. Each event has three properties:
+        * ``key_number``: the number of the key that changed. Keys are numbered starting at 0.
+        * ``pressed``: ``True`` if the event is a transition from released to pressed.
+        * ``released``: ``True`` if the event is a transition from pressed to released.
+                        ``released`` is always the opposite of ``pressed``; it's provided
+                        for convenience and clarity, in case you want to test for
+                        key-release events explicitly.
+        The following example prints the key press and release events to the serial console.
+        .. code-block:: python
+            from adafruit_macropad import MacroPad
+            macropad = MacroPad()
+            while True:
+                key_event = macropad.keys.events.get()
+                if key_event:
+                    print(key_event)
+        """
+        return self._keys
+
+    @property
+    def encoder(self):
+        """
+        The rotary encoder relative rotation position. Always begins at 0 when the code is run, so
+        the value returned is relative to the initial location.
+        The following example prints the relative position to the serial console.
+        .. code-block:: python
+            from adafruit_macropad import MacroPad
+            macropad = MacroPad()
+            while True:
+                print(macropad.encoder)
+        """
+        return self._encoder.position
+
+    @property
+    def speaker(self):
+        return self._speaker
+
+    @property
+    def leds(self):
+        return self._leds
+
+    @property
+    def pixels(self):
+        """Sequence-like object representing the twelve NeoPixel LEDs in a 3 x 4 grid on the
+        MacroPad. Each pixel is at a certain index in the sequence, numbered 0-11. Colors can be an
+        RGB tuple like (255, 0, 0) where (R, G, B), or an RGB hex value like 0xFF0000 for red where
+        each two digits are a color (0xRRGGBB). Set the global brightness using any number from 0
+        to 1 to represent a percentage, i.e. 0.3 sets global brightness to 30%. Brightness defaults
+        to 1.
+        See ``neopixel.NeoPixel`` for more info.
+        The following example turns all the pixels green at 50% brightness.
+        .. code-block:: python
+            from adafruit_macropad import MacroPad
+            macropad = MacroPad()
+            macropad.pixels.brightness = 0.5
+            while True:
+                macropad.pixels.fill((0, 255, 0))
+        The following example sets the first pixel red and the twelfth pixel blue.
+        .. code-block:: python
+            from adafruit_macropad import MacroPad
+            macropad = MacroPad()
+            while True:
+                macropad.pixels[0] = (255, 0, 0)
+                macropad.pixels[11] = (0, 0, 255)
+        """
+        return self._pixels
+
+    @property
+    def keyboard(self):
+        """
+        A keyboard object used to send HID reports. For details, see the ``Keyboard`` documentation
+        in CircuitPython HID: https://circuitpython.readthedocs.io/projects/hid/en/latest/index.html
+        The following example types out the letter "a" when the rotary encoder switch is pressed.
+        .. code-block:: python
+            from adafruit_macropad import MacroPad
+            macropad = MacroPad()
+            while True:
+                if macropad.encoder_switch:
+                    macropad.keyboard.send(macropad.Keycode.A)
+        """
+        if self._keyboard is None:
+            if self._nkro is True:
+                self._keyboard = BitmapKeyboard(usb_hid.devices)
+            else:
+                self._keyboard = Keyboard(usb_hid.devices)
+        return self._keyboard
+
