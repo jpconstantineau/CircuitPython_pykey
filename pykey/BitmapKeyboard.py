@@ -18,7 +18,8 @@ class BitmapKeyboard(Keyboard):
         try:
             device.send_report(b'\0' * 16)
         except ValueError:
-            print("found keyboard, but it did not accept a 16-byte report. check that boot.py is installed properly")         # pylint: disable=line-too-long
+            print("found keyboard, but it did not accept a 16-byte report. " + 
+                   "check that boot.py is installed properly")        
 
         self._keyboard_device = device
 

@@ -30,10 +30,10 @@ import keypad
 import neopixel
 
 from speaker import KB_Speaker
-#from . import KB_Hardware
+from . import KB_Hardware
 
 
-class PyKey60(KB_Hardware):
+class PyKey60(KB_Hardware): # pylint: disable=too-few-public-methods
     """
     Class representing a single Keyboard.
     """

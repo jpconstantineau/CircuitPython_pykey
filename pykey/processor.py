@@ -7,6 +7,19 @@
 import time
 import rainbowio
 
+def get_active_layer(layer_keys_pressed, layer_count):
+    """
+    Class representing a keyboard procesing loop..
+    """
+    tmp = 0
+    if len(layer_keys_pressed)>0:
+        for layer_id in layer_keys_pressed:
+            if layer_id > tmp: # use highest layer number
+                tmp = layer_id
+    if tmp >= layer_count:
+        tmp = layer_count-1
+    return tmp
+
 class KB_Processor:
     """
     Class representing a keyboard procesing loop..
@@ -36,18 +49,7 @@ class KB_Processor:
                 self._pixels[i] = rainbowio.colorwheel(rc_index & 255)
             self._pixels.show()
 
-    def get_active_layer(self, layer_keys_pressed, layer_count):
-        """
-        Class representing a keyboard procesing loop..
-        """
-        tmp = 0
-        if len(layer_keys_pressed)>0:
-            for layer_id in layer_keys_pressed:
-                if layer_id > tmp: # use highest layer number
-                    tmp = layer_id
-        if tmp >= layer_count:
-            tmp = layer_count-1
-        return tmp
+
 
 
     def go(self):   # pylint: disable=invalid-name

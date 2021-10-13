@@ -11,7 +11,8 @@ class KB_LEDMatrix:
     """
     Class Docstring
     """
-# LEDMatrix(row_pins: Sequence[microcontroller.Pin], column_pins: Sequence[microcontroller.Pin], columns_to_anodes: bool = True)
+    # LEDMatrix(row_pins: Sequence[microcontroller.Pin], 
+    # column_pins: Sequence[microcontroller.Pin], columns_to_anodes: bool = True)
 
 
     def __init__(self, row_pins, column_pins, columns_to_anodes: bool = True):

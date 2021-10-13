@@ -29,11 +29,11 @@ import board
 import keypad
 import rotaryio
 
-#from . import KB_Hardware
+from . import KB_Hardware
 from ledmatrix import KB_LEDMatrix
 from speaker import KB_Speaker
 
-class EncoderPad(KB_Hardware):
+class EncoderPad(KB_Hardware): # pylint: disable=too-few-public-methods
     """
     Class representing a single EncoderPad.
     """
@@ -111,7 +111,7 @@ class EncoderPad(KB_Hardware):
         # Below is a RGB EncoderPad
         elif 'EncoderPad RP2040' in self._board_type:
             print("EncoderPad RP2040")
-            import neopixel
+            import neopixel             # pylint: disable=import-outside-toplevel
             self._pixels = neopixel.NeoPixel(board.NEOPIXEL, 9)
             self._speaker = KB_Speaker(board.SPEAKER)
 
