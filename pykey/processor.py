@@ -101,6 +101,7 @@ class KB_Processor:
         """
         Function to run hardware tests
         """
+        # pylint: disable=too-many-branches
         if self._hardware.speaker is not None:
             self._hardware.speaker.play_startup_tune()
         active_keys = []
@@ -128,7 +129,7 @@ class KB_Processor:
                     self._pixels[self._hardware.key_to_position[key_number]] = 0x000000
                     self._hardware.speaker.stop_tone()
             else:
-                i = i+1
+                i += 1
                 self.rainbow_cycle(i)
                 for active_key in active_keys:
                     self._pixels[self._hardware.key_to_position[active_key]] = 0xFFFFFF
