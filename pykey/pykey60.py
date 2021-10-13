@@ -29,9 +29,9 @@ import board
 import keypad
 import neopixel
 
-
-from . import KB_Hardware
 from speaker import KB_Speaker
+from . import KB_Hardware
+
 
 class PyKey60(KB_Hardware):
     """

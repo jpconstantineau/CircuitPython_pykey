@@ -77,7 +77,7 @@ class KB_Processor:
                     group = self._keymaps[0].macros[active_key][2]
                     for item in group:
                         if isinstance(item, int):
-                            if (item >= 0xF0) and (item <= 0xFF) :
+                            if (0xF0 <= item <= 0xFF) :
                                 layer_keys_pressed.append(item - 0xF0)
                 layer_index = self.get_active_layer(layer_keys_pressed, self._layer_count)
                 # print(layer_index)
@@ -103,6 +103,9 @@ class KB_Processor:
             time.sleep(0.002)
 
     def test(self):
+        """
+        Function to run hardware tests
+        """
         if self._hardware.speaker is not None:
             self._hardware.speaker.play_startup_tune()
         active_keys = []

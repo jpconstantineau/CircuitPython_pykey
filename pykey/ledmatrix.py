@@ -1,11 +1,16 @@
 # SPDX-FileCopyrightText: Copyright (c) 2021 Pierre Constantineau
 #
 # SPDX-License-Identifier: MIT
-
+"""
+module docstring
+"""
 from digitalio import DigitalInOut, Direction
 
 
 class KB_LEDMatrix:
+    """
+    Class Docstring
+    """
 # LEDMatrix(row_pins: Sequence[microcontroller.Pin], column_pins: Sequence[microcontroller.Pin], columns_to_anodes: bool = True)
 
 
@@ -34,19 +39,19 @@ class KB_LEDMatrix:
             pin.direction = Direction.OUTPUT
             pin.value = False
 
-    def led_ON(self, led_number):
+    def led_ON(self, led_number):  # pylint: disable=invalid-name
         """
         doctrsing
         """
         self.reset_leds()
         colcount=len(self.column_io)
-        colIO_LED = self.column_io[0]
-        rowIO_LED = self.row_io[0]
+        colIO_LED = self.column_io[0]  # pylint: disable=invalid-name
+        rowIO_LED = self.row_io[0]  # pylint: disable=invalid-name
         for rownum, row_pin in enumerate(self.row_io):
             for colnum, col_pin in enumerate(self.column_io):
                 if led_number == (rownum * colcount + colnum):
-                    colIO_LED = col_pin
-                    rowIO_LED = row_pin
+                    colIO_LED = col_pin  # pylint: disable=invalid-name
+                    rowIO_LED = row_pin  # pylint: disable=invalid-name
                 if self.columns_to_anodes:
                     col_pin.value = False
                     row_pin.value = True
@@ -60,7 +65,7 @@ class KB_LEDMatrix:
             colIO_LED.value = False
             rowIO_LED.value = True
 
-    def led_OFF(self):
+    def led_OFF(self):  # pylint: disable=invalid-name
         """
         docstrings
         """
