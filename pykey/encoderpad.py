@@ -29,7 +29,7 @@ import board
 import keypad
 import rotaryio
 
-from . import KB_Hardware
+#from . import KB_Hardware
 from ledmatrix import KB_LEDMatrix
 from speaker import KB_Speaker
 
@@ -120,4 +120,3 @@ class EncoderPad(KB_Hardware):
                                       board.KEY7, board.KEY8, board.KEY8),
                                     value_when_pressed=False, pull=True)
             self._encoder = rotaryio.IncrementalEncoder(board.ROTA, board.ROTB)
-

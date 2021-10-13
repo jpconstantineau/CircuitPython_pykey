@@ -45,16 +45,13 @@ __repo__ = "https://github.com/jpconstantineau/CircuitPython_pykey.git"
 import os
 import usb_hid
 from adafruit_hid.keyboard import Keyboard
-from pykey.BitmapKeyboard import BitmapKeyboard
+from BitmapKeyboard import BitmapKeyboard
 
 class KB_Hardware:
     """
     Class representing a keyboard Hardware without the specifics...
     """
-
     def __init__(self, nkro: bool = False):
-
-
         self._board_type = os.uname().machine
         self._keyboard = None
         self._pixels = None
