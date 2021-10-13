@@ -49,9 +49,6 @@ class KB_Processor:
                 self._pixels[i] = rainbowio.colorwheel(rc_index & 255)
             self._pixels.show()
 
-
-
-
     def go(self):   # pylint: disable=invalid-name
         """
         Class representing a keyboard procesing loop..
@@ -78,10 +75,9 @@ class KB_Processor:
                 for active_key in active_keys:
                     group = self._keymaps[0].macros[active_key][2]
                     for item in group:
-                        if isinstance(item, int):
-                            if (0xF0 <= item <= 0xFF) :
-                                layer_keys_pressed.append(item - 0xF0)
-                layer_index = self.get_active_layer(layer_keys_pressed, self._layer_count)
+                        if isinstance(item, int) and (0xF0 <= item <= 0xFF):
+                            layer_keys_pressed.append(item - 0xF0)
+                layer_index = get_active_layer(layer_keys_pressed, self._layer_count)
                 # print(layer_index)
                 # print(layers[layer_index].macros[key_number][1])
                 group = self._keymaps[layer_index].getkeycodes(key_number)

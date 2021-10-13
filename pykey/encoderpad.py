@@ -29,9 +29,10 @@ import board
 import keypad
 import rotaryio
 
-from . import KB_Hardware
 from ledmatrix import KB_LEDMatrix
 from speaker import KB_Speaker
+from . import KB_Hardware
+
 
 class EncoderPad(KB_Hardware): # pylint: disable=too-few-public-methods
     """
