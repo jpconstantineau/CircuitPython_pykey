@@ -1,3 +1,6 @@
+"""
+    Class representing a keyboard procesing loop..
+"""
 import time
 import rainbowio
 
@@ -21,6 +24,9 @@ class KB_Processor:
                 pass
 
     def rainbow_cycle(self, number):
+        """
+        Class representing a keyboard procesing loop..
+        """
         if self._pixels is not None:
             for i in range(61):
                 rc_index = (i * 256 // 61) +number
@@ -28,6 +34,9 @@ class KB_Processor:
             self._pixels.show()
 
     def get_active_layer(self, layer_keys_pressed, layer_count):
+        """
+        Class representing a keyboard procesing loop..
+        """
         tmp = 0
         if len(layer_keys_pressed)>0:
             for layer_id in layer_keys_pressed:
@@ -39,6 +48,9 @@ class KB_Processor:
 
 
     def go(self):
+        """
+        Class representing a keyboard procesing loop..
+        """
         if self._hardware.speaker is not None:
             self._hardware.speaker.play_startup_tune()
         active_keys = []

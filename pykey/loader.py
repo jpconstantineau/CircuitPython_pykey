@@ -1,3 +1,6 @@
+"""
+    Module representing a keyboard procesing loop..
+"""
 import os
 
 class KB_Loader:
@@ -11,6 +14,9 @@ class KB_Loader:
         self._layers = []
 
     def load(self):
+        """
+        TODO ADD DOCSTRING
+        """
         files = os.listdir(self._folder)
         files.sort()
         for filename in files:
@@ -22,5 +28,5 @@ class KB_Loader:
                 except (SyntaxError, ImportError, AttributeError, KeyError, NameError,
                         IndexError, TypeError) as err:
                     print(err)
-                    pass
+                    pass          # pylint: disable=unnecessary-pass
         return self._layers

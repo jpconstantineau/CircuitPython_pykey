@@ -60,16 +60,24 @@ class KB_Hardware:
         self._pixels = None
         self._leds = None
         self._speaker =  None
+        self._encoder = None
+        self._keys = None
         self._nkro = nkro
         self._key_to_position = None
         self._position_to_key = None
 
     @property
     def key_to_position(self):
+        """
+        Module representing a keyboard procesing loop..
+        """
         return self._key_to_position
 
     @property
     def position_to_key(self):
+        """
+        Module representing a keyboard procesing loop..
+        """
         return self._position_to_key
 
     @property
@@ -111,10 +119,16 @@ class KB_Hardware:
 
     @property
     def speaker(self):
+        """
+        Module representing a keyboard procesing loop..
+        """
         return self._speaker
 
     @property
     def leds(self):
+        """
+        Module representing a keyboard procesing loop..
+        """
         return self._leds
 
     @property

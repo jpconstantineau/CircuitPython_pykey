@@ -1,16 +1,19 @@
 # SPDX-FileCopyrightText: 2021 Pierre Constantineau
 # SPDX-License-Identifier: MIT
-from adafruit_hid.keycode import Keycode
-
 """
 These keycodes are based on Universal Serial Bus HID Usage Tables Document
 Version 1.12
 Chapter 10: Keyboard/Keypad Page(0x07) - Page 53
 https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf
 """
+from adafruit_hid.keycode import Keycode
 
-class KB_Keycode(Keycode):
-    NO        = 0x00    
+class KB_Keycode(Keycode):  # pylint: disable=too-few-public-methods
+"""
+Extends Keycode from adafruit_hid
+"""
+
+    NO        = 0x00    # pylint: disable=invalid-name
     XXXXXXX   = 0x00    # pylint: disable=invalid-name
     ROLL_OVER = 0x01
     TRANSPARENT = 0x01
@@ -53,7 +56,7 @@ class KB_Keycode(Keycode):
     RIGHT = 0x4F
     LEFT = 0x50
     DOWN = 0x51
-    UP = 0x52
+    UP = 0x52         # pylint: disable=invalid-name
     NUMLOCK = 0x53
     KP_SLASH = 0x54
     KP_ASTERISK = 0x55
@@ -200,7 +203,7 @@ class KB_Keycode(Keycode):
 
     # Japanese specific
     ZKHK = GRAVE
-    RO   = INT1
+    RO   = INT1       # pylint: disable=invalid-name
     KANA = INT2
     JYEN = INT3
     HENK = INT4

@@ -29,7 +29,7 @@ import board
 import keypad
 import rotaryio
 
-from pykey.hardware import KB_Hardware
+from pykey import KB_Hardware
 from pykey.ledmatrix import KB_LEDMatrix
 from pykey.speaker import KB_Speaker
 
