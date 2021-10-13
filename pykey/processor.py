@@ -131,13 +131,12 @@ class KB_Processor:
                 if key_event.pressed:
                     self._pixels[self._hardware.key_to_position[key_number]] = 0xFFFFFF
                     self._hardware.speaker.start_tone(440)
-                    print
                 else:
                     self._pixels[self._hardware.key_to_position[key_number]] = 0x000000
                     self._hardware.speaker.stop_tone()
             else:
                 i += 1
-                self.rainbow_cycle(i)  # pylint: pointless-statement
+                self.rainbow_cycle(i)
                 for active_key in active_keys:
                     self._pixels[self._hardware.key_to_position[active_key]] = 0xFFFFFF
                 self._pixels.show()
