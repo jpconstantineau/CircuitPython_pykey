@@ -7,10 +7,12 @@
 import time
 import pwmio
 
+
 class KB_Speaker:
     """
     Module representing a keyboard procesing loop..
     """
+
     def __init__(self, speaker_pin):
 
         self.speaker_pin = speaker_pin
@@ -22,7 +24,7 @@ class KB_Speaker:
         Module representing a keyboard procesing loop..
         """
         OFF = 0  # pylint: disable=invalid-name
-        ON = 2**15  # pylint: disable=invalid-name
+        ON = 2 ** 15  # pylint: disable=invalid-name
         self.buzzer.duty_cycle = ON
         self.buzzer.frequency = 440
         time.sleep(0.05)
@@ -37,7 +39,7 @@ class KB_Speaker:
         Module representing a keyboard procesing loop..
         """
         OFF = 0  # pylint: disable=invalid-name
-        ON = 2**15  # pylint: disable=invalid-name
+        ON = 2 ** 15  # pylint: disable=invalid-name
         self.buzzer.duty_cycle = ON
         self.buzzer.frequency = 1660
         time.sleep(0.05)
@@ -51,7 +53,7 @@ class KB_Speaker:
         """
         Module representing a keyboard procesing loop..
         """
-        ON = 2**15  # pylint: disable=invalid-name
+        ON = 2 ** 15  # pylint: disable=invalid-name
         self.buzzer.frequency = frequency
         self.buzzer.duty_cycle = ON
 
@@ -61,5 +63,3 @@ class KB_Speaker:
         """
         OFF = 0  # pylint: disable=invalid-name
         self.buzzer.duty_cycle = OFF
-    
-

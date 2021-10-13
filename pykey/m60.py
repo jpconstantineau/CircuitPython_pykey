@@ -31,7 +31,8 @@ import keypad
 
 from . import KB_Hardware
 
-class M60(KB_Hardware): # pylint: disable=too-few-public-methods
+
+class M60(KB_Hardware):  # pylint: disable=too-few-public-methods
     """
     Class representing a single Keyboard.
     """
@@ -41,7 +42,25 @@ class M60(KB_Hardware): # pylint: disable=too-few-public-methods
 
         # Hardware definition: Switch Matrix Setup.
         self._keys = keypad.KeyMatrix(
-            row_pins=(board.R1, board.R2, board.R3, board.R4, board.R5, board.R6, board.R7, board.R8),
-            column_pins=(board.C1, board.C2, board.C3, board.C4, board.C5, board.C6, board.C7, board.C8),
+            row_pins=(
+                board.R1,
+                board.R2,
+                board.R3,
+                board.R4,
+                board.R5,
+                board.R6,
+                board.R7,
+                board.R8,
+            ),
+            column_pins=(
+                board.C1,
+                board.C2,
+                board.C3,
+                board.C4,
+                board.C5,
+                board.C6,
+                board.C7,
+                board.C8,
+            ),
             columns_to_anodes=True,
         )

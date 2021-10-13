@@ -8,21 +8,22 @@ https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf
 """
 from adafruit_hid.keycode import Keycode
 
+
 class KB_Keycode(Keycode):  # pylint: disable=too-few-public-methods
     """
     Extends Keycode from adafruit_hid
     """
 
-    NO        = 0x00    # pylint: disable=invalid-name
-    XXXXXXX   = 0x00    # pylint: disable=invalid-name
+    NO = 0x00  # pylint: disable=invalid-name
+    XXXXXXX = 0x00  # pylint: disable=invalid-name
     ROLL_OVER = 0x01
     TRANSPARENT = 0x01
-    TRNS      = 0x01
-    _______   = 0x01
+    TRNS = 0x01
+    _______ = 0x01
     POST_FAIL = 0x02
     UNDEFINED = 0x03
 
-    ENT  = 0x28
+    ENT = 0x28
     ESC = 0x29
     BSPACE = 0x2A
     BSPC = 0x2A
@@ -44,19 +45,19 @@ class KB_Keycode(Keycode):  # pylint: disable=too-few-public-methods
     CAPS = 0x39
     CLCK = 0x39
     DELETE = 0x4C
-    DEL  = 0x4C
+    DEL = 0x4C
     INSERT = 0x49
-    INS  = 0x49
+    INS = 0x49
     PSCREEN = 0x46
     SCROLLLOCK = 0x47
     PAUS = 0x48
-    BRK  = 0x48
+    BRK = 0x48
     PGUP = 0x4B
     PGDOWN = 0x4E
     RIGHT = 0x4F
     LEFT = 0x50
     DOWN = 0x51
-    UP = 0x52         # pylint: disable=invalid-name
+    UP = 0x52  # pylint: disable=invalid-name
     NUMLOCK = 0x53
     KP_SLASH = 0x54
     KP_ASTERISK = 0x55
@@ -75,7 +76,7 @@ class KB_Keycode(Keycode):  # pylint: disable=too-few-public-methods
     KP_0 = 0x62
     KP_DOT = 0x63
     NONUS_BSLASH = 0x64
-    APP  = 0x65
+    APP = 0x65
     KP_EQUAL = 0x67
     F20 = 0x6F
     F21 = 0x70
@@ -133,7 +134,7 @@ class KB_Keycode(Keycode):  # pylint: disable=too-few-public-methods
     EXSEL = 0xA4
 
     # LAST OF THE VALID KEYCODES ANYTHING BELOW SHOULD BE FILTERED OUT
-    RESERVED_A5 = 0xA5  
+    RESERVED_A5 = 0xA5
     RESERVED_A6 = 0xA6
     RESERVED_A7 = 0xA7
     RESERVED_A8 = 0xA8
@@ -145,37 +146,37 @@ class KB_Keycode(Keycode):  # pylint: disable=too-few-public-methods
     RESERVED_AE = 0xAE
     RESERVED_AF = 0xAF
 
-    LAYER_0  =    0xF0
-    LAYER_1  =    0xF1
-    LAYER_2  =    0xF2
-    LAYER_3  =    0xF3
-    LAYER_4  =    0xF4
-    LAYER_5  =    0xF5
-    LAYER_6  =    0xF6
-    LAYER_7  =    0xF7
-    LAYER_8  =    0xF8
-    LAYER_9  =    0xF9
-    LAYER_A  =    0xFA
-    LAYER_B  =    0xFB
-    LAYER_C  =    0xFC
-    LAYER_D  =    0xFD
-    LAYER_E  =    0xFE
-    LAYER_F  =    0xFF
+    LAYER_0 = 0xF0
+    LAYER_1 = 0xF1
+    LAYER_2 = 0xF2
+    LAYER_3 = 0xF3
+    LAYER_4 = 0xF4
+    LAYER_5 = 0xF5
+    LAYER_6 = 0xF6
+    LAYER_7 = 0xF7
+    LAYER_8 = 0xF8
+    LAYER_9 = 0xF9
+    LAYER_A = 0xFA
+    LAYER_B = 0xFB
+    LAYER_C = 0xFC
+    LAYER_D = 0xFD
+    LAYER_E = 0xFE
+    LAYER_F = 0xFF
 
-    LCTL       = 0xE0
-    LSFT      = 0xE1
-    LSHIFT      = 0xE1
-    #LALT        = 0xE2
-    LGUI        = 0xE3
-    LCMD        = 0xE3
-    LWIN        = 0xE3
-    RCTL       = 0xE4
-    RSFT      = 0xE5
-    RSHIFT      = 0xE5
-    #RALT        = 0xE6
-    RGUI        = 0xE7
-    RCMD        = 0xE7
-    RWIN        = 0xE7
+    LCTL = 0xE0
+    LSFT = 0xE1
+    LSHIFT = 0xE1
+    # LALT        = 0xE2
+    LGUI = 0xE3
+    LCMD = 0xE3
+    LWIN = 0xE3
+    RCTL = 0xE4
+    RSFT = 0xE5
+    RSHIFT = 0xE5
+    # RALT        = 0xE6
+    RGUI = 0xE7
+    RCMD = 0xE7
+    RWIN = 0xE7
 
     RGHT = RIGHT
     PGDN = PGDOWN
@@ -183,12 +184,12 @@ class KB_Keycode(Keycode):  # pylint: disable=too-few-public-methods
     SLCK = SCROLLLOCK
 
     NLCK = NUMLOCK
-    SPC  = SPACE
-    EQL  = EQUAL
-    GRV  = GRAVE
+    SPC = SPACE
+    EQL = EQUAL
+    GRV = GRAVE
     RBRC = RBRACKET
     LBRC = LBRACKET
-    
+
     BSLS = BSLASH
     SLSH = SLASH
     SCLN = SCOLON
@@ -199,11 +200,11 @@ class KB_Keycode(Keycode):  # pylint: disable=too-few-public-methods
     LNUM = LOCKING_NUM
     LSCR = LOCKING_SCROLL
     ERAS = ALT_ERASE
-    CLR  = CLEAR
+    CLR = CLEAR
 
     # Japanese specific
     ZKHK = GRAVE
-    RO   = INT1       # pylint: disable=invalid-name
+    RO = INT1  # pylint: disable=invalid-name
     KANA = INT2
     JYEN = INT3
     HENK = INT4
@@ -212,16 +213,16 @@ class KB_Keycode(Keycode):  # pylint: disable=too-few-public-methods
     HAEN = LANG1
     HANJ = LANG2
     # Keypad
-    P1   = KP_1  # pylint: disable=invalid-name
-    P2   = KP_2  # pylint: disable=invalid-name
-    P3   = KP_3  # pylint: disable=invalid-name
-    P4   = KP_4  # pylint: disable=invalid-name
-    P5   = KP_5  # pylint: disable=invalid-name
-    P6   = KP_6  # pylint: disable=invalid-name
-    P7   = KP_7  # pylint: disable=invalid-name
-    P8   = KP_8  # pylint: disable=invalid-name
-    P9   = KP_9  # pylint: disable=invalid-name
-    P0   = KP_0  # pylint: disable=invalid-name
+    P1 = KP_1  # pylint: disable=invalid-name
+    P2 = KP_2  # pylint: disable=invalid-name
+    P3 = KP_3  # pylint: disable=invalid-name
+    P4 = KP_4  # pylint: disable=invalid-name
+    P5 = KP_5  # pylint: disable=invalid-name
+    P6 = KP_6  # pylint: disable=invalid-name
+    P7 = KP_7  # pylint: disable=invalid-name
+    P8 = KP_8  # pylint: disable=invalid-name
+    P9 = KP_9  # pylint: disable=invalid-name
+    P0 = KP_0  # pylint: disable=invalid-name
     PDOT = KP_DOT
     PCMM = KP_COMMA
     PSLS = KP_SLASH

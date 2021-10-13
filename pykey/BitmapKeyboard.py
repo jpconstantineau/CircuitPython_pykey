@@ -12,14 +12,17 @@ class BitmapKeyboard(Keyboard):
     """
     Module representing a NKRO Keyboard
     """
+
     def __init__(self, devices):
         device = find_device(devices, usage_page=0x1, usage=0x6)
 
         try:
-            device.send_report(b'\0' * 16)
+            device.send_report(b"\0" * 16)
         except ValueError:
-            print("found keyboard, but it did not accept a 16-byte report. " + 
-                   "check that boot.py is installed properly")        
+            print(
+                "found keyboard, but it did not accept a 16-byte report. "
+                + "check that boot.py is installed properly"
+            )
 
         self._keyboard_device = device
 
